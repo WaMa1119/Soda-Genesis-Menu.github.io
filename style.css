@@ -177,6 +177,8 @@ footer{
 
   header{ display: none !important;}
 
+  footer{ display: none !important;}
+  
   .right {
     width: 215.9mm;
     height: 279.4mm;
@@ -232,3 +234,4 @@ footer{
     background-color: transparent;
   }
 }
+
