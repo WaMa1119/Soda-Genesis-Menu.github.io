@@ -1,0 +1,234 @@
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #000000;
+  font-family: 'Roboto', sans-serif;
+}
+
+header{
+  background-image: url(images/Fondo\ header.jpg);
+  background-position: bottom;
+  background-size: cover;
+  margin: 0px;
+  margin-bottom: 10px;
+  padding: 0px;
+  padding-bottom: 10px;
+}
+
+header h1{
+  color: white;
+}
+
+.logocontainer{
+  text-align: center;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 400px 1fr;
+  gap: 20px;
+}
+
+.box {
+  background: rgb(0, 0, 0);
+  border: 2px solid #ffc301;
+  box-shadow: 0px 0px 20px #ffc301;
+  padding: 15px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: white;
+}
+.right{
+  background-color: black;
+  color: white;
+}
+.scroll { max-height: 500px; overflow-y: auto; }
+
+form { display: flex; flex-direction: column; gap: 10px; }
+
+input, textarea, button, select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+button{
+  font-size: medium;
+  padding: 15px;
+  color: black;
+  font-weight: bold;
+  background-color: #f1d36e ;
+  border: 1px solid #9e7900;
+  box-shadow: 0px 0px 5px #f1d36e;
+  border-radius: 10px;
+  transition: 0.2s;
+}
+button:hover{
+  background-color: #e9bb26 ;
+  transform: scale(1.1);
+}
+.field { display: flex; align-items: center; gap: 10px; }
+
+/* ITEMS */
+.item button { padding: 4px 8px; font-size: 11px; }
+
+.item {
+  padding: 10px;
+  line-height: 1.15;
+  page-break-inside: avoid;
+}
+
+.item strong {
+  font-size: 1.2em;
+  display: block;
+}
+
+.item p {
+  margin: 2px 0;
+  font-size: 1em;
+}
+
+.item small {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.item.es-titulo strong {
+  font-size: 1.4em;
+  text-transform: uppercase;
+  background-image: url(images/Fondo\ titulos.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  color: black;
+  padding-left: 10px;
+}
+.item.espacio {
+  height: 1.4em;      
+  border: none;
+  margin-bottom: 12px;
+  padding-bottom: 12px;
+  background-color: #ffffff;
+  width: 300px;
+  margin-left: 10px;
+  padding-left: 0px;
+}
+.actions { margin-top: 5px; display: flex; gap: 5px; }
+.actions button { padding: 4px 8px; font-size: 11px; }
+
+.category-title {
+  background: #0f0f0f;
+  padding: 5px;
+  margin-top: 15px;
+  font-weight: bold;
+  border-left: 4px solid white; 
+  color: white;
+}
+
+.print-btn {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #ffc301;
+  box-shadow: 0px 0px 20px #ffc301;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+.print-btn:hover{
+  background-color: #be9304;
+  transform: none;
+}
+
+footer{
+  background-color: #000000;
+  color: white;
+  font-size: small;
+  text-align: center;
+  margin-top: 200px;
+}
+.foramto{
+  display: flex;
+  height: 10%;
+}
+
+@media ( max-width: 760px ) {
+  .layout{
+    display: block;
+  }
+  .foramto{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .foramto button{
+    margin-top: 10px;
+  }
+}
+
+/* 🖨️ IMPRESIÓN */
+@media print {
+  @page { margin: 0; size: letter; }
+
+  body { background: white; padding: 0;}
+
+  .no-print { display: none !important; }
+
+  .layout { display: block; }
+
+  header{ display: none !important;}
+
+  .right {
+    width: 215.9mm;
+    height: 279.4mm;
+    padding: 25mm 10mm 0mm 10mm;
+    background-image: url("images/backgroungimp3.jpg") !important;
+    background-size: cover !important;
+    background-position: center !important;
+    print-color-adjust: exact;
+    
+  }
+
+  #menu {
+    column-count: 2;
+    column-gap: 8mm;
+    column-fill: auto;
+    height: 220mm;
+    overflow: hidden;
+  }
+
+  .item {
+    padding: 0px;
+    break-inside: avoid;
+    padding-left: 7px;
+  }
+  .item.es-titulo{
+    padding: 6px;
+    padding-left: 7px;
+    padding-bottom: 0px;
+  }
+  .item.es-titulo strong{
+    background-image: url(images/Fondo\ titulos.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    padding: 6px;
+    padding-left: 15px;
+    margin-bottom: 7px;
+    font-size: 1.6em;
+  }
+  .item.es-titulo small{
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+  }
+  .item strong{
+    padding: 0px;
+  }
+  .item small{
+    padding: 0px;
+  }
+
+  .item.espacio{
+    padding: 0px;
+    margin: 0px;
+    background-color: transparent;
+  }
+}

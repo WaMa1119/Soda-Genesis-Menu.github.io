@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Menú del día - Panel de Control</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="logocontainer">
+    <img src="images/Logo boceto borde blanco.png" alt="Logo soda y cafeteria Genesis" width="200px">
+    <h1>Menu de Soda y cafeteria Genesis</h1>
+  </div>
+</header>
+<div class="layout">
+  <div class="left no-print">
+    <section class="box">
+      <h2>Agregar / Editar platillo</h2>
+      <form id="form">
+        <input type="text" id="nombre" placeholder="Nombre del platillo o Categoría" required/>
+        <input type="text" id="precio" placeholder="Precio (dejar vacío para Título)" />
+        <textarea id="descripcion" placeholder="Descripción en español"></textarea>
+        
+        <div class="field">
+          <label>Color del platillo:</label>
+          <input type="color" id="colorPlatillo" value="#ffffff" />
+        </div>
+
+        <button type="submit" id="btn-guardar">Guardar en Menú</button>
+        <button type="button" id="cancelar" hidden>Cancelar edición</button>
+      </form>
+    </section>
+
+    <section class="box">
+      <h2>Personalizar Formato</h2>
+      <div class="field">
+        <label>Fuente:</label>
+        <div class="foramto">
+        <select id="fontFamilySelect">
+          <option value="'Roboto', sans-serif">Moderna (Roboto)</option>
+          <option value="'Playfair Display', serif">Elegante (Playfair)</option>
+          <option value="'Dancing Script', cursive">Manuscrita (Dancing)</option>
+        </select>
+        <button type="button" id="linedown">Agregar espaciado</button>
+      </div>
+      </div>
+    </section>
+
+    <section class="box scroll">
+      <h2>Platillos predefinidos</h2>
+      <div id="predefinidos"></div>
+    </section>
+  </div>
+
+  <div class="right" id="hoja-impresion">
+    <section class="box-menu">
+      <h2 class="no-print">Vista Previa del Menú</h2>
+      <div id="menu"></div>
+    </section>
+
+    <button class="print-btn no-print" onclick="window.print()">🖨️ Imprimir menú</button>
+  </div>
+</div>
+<footer>
+  <p style="font-size: medium; font-weight: bold;">Soda y Cafeteria Génesis</p>
+  <p>Todos los derechos reservados</p>
+  <p>Producido y diseñado por Walter Monge</p>
+  <img src="images/Walter Monge Portafolio.png" alt="Logo del productor" width="60px">
+</footer>
+<script src="app.js"></script>
+</body>
+</html>
